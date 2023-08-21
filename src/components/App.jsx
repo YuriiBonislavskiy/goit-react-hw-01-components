@@ -6,7 +6,7 @@ import { FriendList } from './FriendList/FriendList';
 import friendListInfo from '../data/friends.json';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 import transactionsInfo from '../data/transactions.json';
-import * as CONSTANS from 'constans';
+import { starTitle, friendTitle, transactionsTitle } from 'constans';
 
 
 export const App = () => {
@@ -30,10 +30,10 @@ export const App = () => {
         avatar={userInfo.avatar}
         stats={userInfo.stats}
       />
-      <Statistics title={CONSTANS.starTitle} stats={statisticsInfo} />
-      <FriendList title={CONSTANS.friendTitle} friends={friendListInfo} />
+      <Statistics title={starTitle} stats={statisticsInfo} />
+      <FriendList title={friendTitle} friends={friendListInfo} />
       <TransactionHistory
-        title={CONSTANS.transactionsTitle}
+        title={transactionsTitle}
         transactions={transactionsInfo}
       />
     </div>
