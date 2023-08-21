@@ -1,4 +1,4 @@
-export default function capitalize(str,delemitter) {
+export const capitalize = (str,delemitter) => {
   if (typeof str === 'string') {
     return str
       .split(' ')

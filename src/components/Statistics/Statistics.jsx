@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
-import getRandomHexColor from '../Utils/GetRandomHexColor.js';
+import { getRandomHexColor } from 'utils';
 
-
-export const Statistics = ({ title,  stats }) => {
+export const Statistics = ({ title, stats }) => {
   return (
     <section className={css.statistics}>
-      <h2 className={css.title}>{title ? title : "Upload stats"}</h2>
+      {title && <h2 className={css.title}>{title}</h2>}
       <ul className={css.statlist}>
         {stats.map(({ id, label, percentage }) => (
           <li
@@ -24,7 +23,7 @@ export const Statistics = ({ title,  stats }) => {
 };
 
 Statistics.propTypes = {
-    title: PropTypes.string,
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -33,4 +32,3 @@ Statistics.propTypes = {
     })
   ),
 };
-

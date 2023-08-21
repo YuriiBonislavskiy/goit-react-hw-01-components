@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import css from './TransactionHistory.module.css';
-import capitalize from '../Utils/Capitalize.js';
+import { capitalize } from 'utils';
 
 export const TransactionHistory = ({ title, transactions }) => {
   return (
     <section className={css.transactionsContainer}>
-      <h2 className={css.title}>{title ? title : 'Transaction History'}</h2>
+      {title && <h2 className={css.title}>{title}</h2>}
       <table className={css.transactionHistory}>
         <thead>
           <tr>
@@ -16,8 +16,8 @@ export const TransactionHistory = ({ title, transactions }) => {
         </thead>
         <tbody>
           {transactions.map(({ id, type, amount, currency }, index) => (
-            <tr key={id} style={{background: (index % 2) && 'white'}}>
-              <td>{capitalize(type,', ')}</td>
+            <tr key={id} style={{ background: index % 2 && 'white' }}>
+              <td>{capitalize(type, ', ')}</td>
               <td>{amount}</td>
               <td>{currency}</td>
             </tr>

@@ -1,15 +1,12 @@
 import { User } from 'components/User/User';
-import userInfo from '../components/Data/user.json';
+import userInfo from '../data/user.json';
 import { Statistics } from './Statistics/Statistics';
-import statisticsInfo from '../components/Data/data.json';
+import statisticsInfo from '../data/data.json';
 import { FriendList } from './FriendList/FriendList';
-import friendListInfo from '../components/Data/friends.json';
+import friendListInfo from '../data/friends.json';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-import transactionsInfo from '../components/Data/transactions.json';
-
-const starTitle = '';
-const friendTitle = '';
-const transactionsTitle = '';
+import transactionsInfo from '../data/transactions.json';
+import * as CONSTANS from 'constans';
 
 
 export const App = () => {
@@ -33,10 +30,10 @@ export const App = () => {
         avatar={userInfo.avatar}
         stats={userInfo.stats}
       />
-      <Statistics title={starTitle} stats={statisticsInfo} />
-      <FriendList title={friendTitle} friends={friendListInfo} />
+      <Statistics title={CONSTANS.starTitle} stats={statisticsInfo} />
+      <FriendList title={CONSTANS.friendTitle} friends={friendListInfo} />
       <TransactionHistory
-        title={transactionsTitle}
+        title={CONSTANS.transactionsTitle}
         transactions={transactionsInfo}
       />
     </div>
