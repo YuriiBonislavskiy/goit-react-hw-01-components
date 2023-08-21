@@ -7,7 +7,7 @@ export const FriendListItem = friend => {
   return (
     <li className={css.item} key={id}>
       <span
-        className={`${css.status} ${isOnline ? css.isOnline : null}`}
+        className={`${css.status} ${isOnline ? css.isOnline : ""}`}
       ></span>
       <img
         className={css.avatar}
